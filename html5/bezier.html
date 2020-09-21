@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function test() {
+                // 캔버스 객체 생성
+                var canvas = document.getElementById('myCanvas'); // 캔버스 접근
+
+                // 캔버스 컨택스트 객체 생성 getContext
+                var context = canvas.getContext('2d');
+
+                canvas.width = 300;
+                canvas.height = 300;
+                canvas.style.backgroundColor = "lightyellow";
+                context.fillStyle = 'lightblue';
+
+                // 베지에 곡선 그리기
+                // 2차 quadraticCurveTo(A시작점, B제어점, C종료점);
+                // 3차 bezierCurveTo();
+
+                // 2차
+                context.beginPath();
+                context.moveTo(50, 150);
+                context.quadraticCurveTo(130, 50, 180, 180);
+                context.stroke();
+                context.fill();
+
+                // 3차
+                context.fillStyle = 'lightgreen';
+                context.beginPath();
+                context.moveTo(30, 50);
+                context.bezierCurveTo(50, 180, 130, 180, 180, 50);
+                context.stroke();
+                context.fill();
+            }
+        </script>
+    </head>
+    <body onload="test();">
+        <!-- 캔버스 영역 생성 -->
+        <!-- width="350" height="200" style="background-color:lightblue" -->
+        <canvas id="myCanvas" >
+            이 브라우저는 HTML5의 canvas 요소를 지원하지 않습니다.
+        </canvas>
+    </body>
+</html>

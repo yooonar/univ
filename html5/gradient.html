@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function test() {
+                // 캔버스 객체 생성
+                var canvas = document.getElementById('myCanvas'); // 캔버스 접근
+
+                // 캔버스 컨택스트 객체 생성 getContext
+                var context = canvas.getContext('2d');
+
+                canvas.width = 300;
+                canvas.height = 300;
+                canvas.style.backgroundColor = "lightyellow";
+
+                // 그라데이션 스타일
+                // 선형 - createLinearGradient(x1, y1, x2, y2);
+                // 방사형 - createRedialGradient(x1, y1, r1, x2, y2, r2);
+                // 그라데이션 경계색 지정 - addColorStop(오프셋, 색상)
+                // offset: 경계색 위치. 시작점 0.0 ~ 끝점 1.0
+
+                context.beginPath();
+                var linearGra1 = context.createLinearGradient(0, 0, 100, 100); // 대각선
+                linearGra1.addColorStop(0.0, "red");
+                linearGra1.addColorStop(0.5, "yellow");
+                linearGra1.addColorStop(1.0, "blue");
+                context.fillStyle = linearGra1; // 채우기 스타일을 그라데이션으로 지정
+                context.fillRect(0, 0, 150, 150); // 캔버스의 위치와 그라데이션의 색상 위치가 같을 때
+                //context.fillRect(50, 0, 200, 250); // 캔버스의 위치와 그라데이션의 색상 위치가 다를 때
+
+                context.beginPath();
+                var radialGra1 = context.createRadialGradient(100, 100, 10, 100, 100, 90);
+                radialGra1.addColorStop(0.0, "yellow");
+                radialGra1.addColorStop(1.0, "blue");
+                context.fillStyle = radialGra1; // 채우기 스타일을 그라데이션으로 지정
+                context.fillRect(0, 0, 200, 200); // 캔버스의 위치와 그라데이션의 색상 위치가 같을 때
+
+
+            }   
+        </script>
+    </head>
+    <body onload="test();">
+        <!-- 캔버스 영역 생성 -->
+        <!-- width="350" height="200" style="background-color:lightblue" -->
+        <canvas id="myCanvas" >
+            이 브라우저는 HTML5의 canvas 요소를 지원하지 않습니다.
+        </canvas>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function test() {
+                // 캔버스 객체 생성
+                var canvas = document.getElementById('myCanvas'); // 캔버스 접근
+
+                // 캔버스 컨택스트 객체 생성 getContext
+                var context = canvas.getContext('2d');
+
+                canvas.width = 700;
+                canvas.height = 600;
+                canvas.style.backgroundColor = "lightyellow";
+                
+                context.beginPath();
+                context.font = "italic 40pt 궁서체";
+                context.strokeStyle = "red";
+                context.lineWidth = 2;
+                context.strokeText("컴퓨터 과학 HTML5", 20, 65);
+                context.fillText("컴퓨터 과학 HTML5", 20,65);
+            }   
+        </script>
+    </head>
+    <body onload="test();">
+        <!-- 캔버스 영역 생성 -->
+        <!-- width="350" height="200" style="background-color:lightblue" -->
+        <canvas id="myCanvas" >
+            이 브라우저는 HTML5의 canvas 요소를 지원하지 않습니다.
+        </canvas>
+    </body>
+</html>

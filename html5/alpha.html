@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function test() {
+                // 캔버스 객체 생성
+                var canvas = document.getElementById('myCanvas'); // 캔버스 접근
+
+                // 캔버스 컨택스트 객체 생성 getContext
+                var context = canvas.getContext('2d');
+
+                canvas.width = 300;
+                canvas.height = 300;
+                canvas.style.backgroundColor = "lightyellow";
+
+                // 투명도 0.0(투명) ~ 1.0(불투명)
+                context.globalAlpha = 0.7;
+
+                // blue 위에 red
+                context.beginPath();
+                context.lineWidth = 20;
+                context.strokeStyle = "blue";
+                context.strokeRect(50, 50, 100, 100);
+                context.fillStyle = "red";
+                context.fillRect(50, 50, 100, 100);
+
+                // red 위에 blue
+                context.beginPath();
+                context.lineWidth = 20;
+                context.fillStyle = "red";
+                context.fillRect(170, 170, 100, 100);
+                context.strokeStyle = "blue";
+                context.strokeRect(170, 170, 100, 100);
+            }   
+        </script>
+    </head>
+    <body onload="test();">
+        <!-- 캔버스 영역 생성 -->
+        <!-- width="350" height="200" style="background-color:lightblue" -->
+        <canvas id="myCanvas" >
+            이 브라우저는 HTML5의 canvas 요소를 지원하지 않습니다.
+        </canvas>
+    </body>
+</html>

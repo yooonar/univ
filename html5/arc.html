@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function test() {
+                // 캔버스 객체 생성
+                var canvas = document.getElementById('myCanvas'); // 캔버스 접근
+
+                // 캔버스 컨택스트 객체 생성 getContext
+                var context = canvas.getContext('2d');
+
+                canvas.width = 300;
+                canvas.height = 300;
+                canvas.style.backgroundColor = "lightyellow";
+                context.fillStyle = 'lightblue';
+
+                // 3시 방향이 0도, false = 시계방향(기본값), true = 반시계방향
+                // x, y, 반지름, 시작각도(각도 * Math.PI / 180), 종료각도, 그리는 방향
+
+                // 원 그리기
+                /*
+                context.beginPath();
+                context.arc(100, 100, 75, 0, 2 * Math.PI);
+                context.stroke();
+                */
+
+                // 오른쪽 원호 그리기
+                /*
+                context.beginPath();
+                context.arc(100, 100, 75, 135 * Math.PI / 180, 315 * Math.PI / 180, true);
+                context.stroke();
+                */
+
+                // dhlsWHr 원호 그리기
+                /*
+                context.beginPath();
+                context.arc(100, 100, 75, 135 * Math.PI / 180, 315 * Math.PI / 180, false);
+                context.stroke();
+                */
+               
+                /*
+                context.beginPath();
+                context.arc(100, 100, 75, 0 * Math.PI / 180, 90 * Math.PI / 180, false);
+                context.fill();
+                context.beginPath();
+                context.arc(100, 100, 75, 90 * Math.PI / 180, 180 * Math.PI / 180, false);
+                context.fill();
+                context.beginPath();
+                context.arc(100, 100, 75, 180 * Math.PI / 180, 360 * Math.PI / 180, false);
+                context.fill();
+                */
+
+                context.beginPath();
+                context.moveTo(100, 100);
+                context.arc(100, 100, 75, 0, 90 * Math.PI / 180, true);
+                context.closePath();
+                context.stroke();
+
+                context.beginPath();
+                context.moveTo(110, 110);
+                context.arc(110, 110, 75, 0, 90 * Math.PI / 180, false);
+                context.closePath();
+                context.fill();
+
+                // 직선과 접하는 원호 그리기
+                context.beginPath();
+                context.moveTo(30, 30);
+                context.arcTo(100, 170, 180, 80, 50);
+                context.stroke();
+            }
+        </script>
+    </head>
+    <body onload="test();">
+        <!-- 캔버스 영역 생성 -->
+        <!-- width="350" height="200" style="background-color:lightblue" -->
+        <canvas id="myCanvas" >
+            이 브라우저는 HTML5의 canvas 요소를 지원하지 않습니다.
+        </canvas>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function test() {
+                // 캔버스 객체 생성
+                var canvas = document.getElementById('myCanvas'); // 캔버스 접근
+
+                // 캔버스 컨택스트 객체 생성 getContext
+                var context = canvas.getContext('2d');
+
+                canvas.width = 300;
+                canvas.height = 300;
+                canvas.style.backgroundColor = "lightyellow";
+
+                // 사각형 그리기
+                // 1.  패스 초기화 - beginPath() 메소드
+
+                /*
+                context.beginPath();
+                context.strokeStyle = "lightblue";
+
+                context.lineWidth = 30;
+                context.strokeStyle = 'rgba(255, 0, 255, 0, 0,5)';
+                context.lineCap = 'round';
+                context.lineJoin = 'bevel';
+                context.moveTo(50, 50);
+                context.lineTo(200, 250);
+                context.lineTo(250, 120);
+                context.stroke();
+                */
+
+                // 점선 - setLineDash([표시선픽셀, 미표시선픽셀])
+                context.beginPath();
+                context.lineWidth = 10;
+                context.strokeStyle = "lightgreen";
+                context.setLineDash([1, 2, 3, 4]);
+                context.rect(30, 30, 240, 240);
+                context.stroke();
+
+                context.beginPath();
+                context.setLineDash([5, 2]);
+                fillStyle = "lightblue";
+                context.rect(100, 100, 100, 100);
+                context.stroke();
+                context.fill();
+
+                context.beginPath();
+                context.setLineDash([10]);
+                context.arc(150, 150, 100, 0, 2* Math.PI);
+                context.stroke();
+            }   
+        </script>
+    </head>
+    <body onload="test();">
+        <!-- 캔버스 영역 생성 -->
+        <!-- width="350" height="200" style="background-color:lightblue" -->
+        <canvas id="myCanvas" >
+            이 브라우저는 HTML5의 canvas 요소를 지원하지 않습니다.
+        </canvas>
+    </body>
+</html>
