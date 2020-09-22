@@ -30,6 +30,8 @@ bool chkOverlap(CircleType c1, CircleType c2) {
     // 피타고라스 정리에 의해 제곱 구하기
     double dCntr = sqrt(dx * dx + dy * dy); // sqrt 함수: 제곱근(루트)
 
+    // dCntr < c1.radius + c2.radius; // 두 원이 중첩됨
+    // dCntr >= c1.radius + c2.radius; // 두 원이 중첩되지 않음
     return dCntr < c1.radius + c2.radius;
 }
 
