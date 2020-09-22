@@ -1,9 +1,11 @@
 #include <iostream>
-#include <cmath> // sqrt 함수
+#include <cmath> // sqrt 스퀘어 루트 함수
 using namespace std;
+
+
 // 구조체 끝은 반드시 세미콜론(;)을 붙여줘야한다.
 
-const double PI = 3.141593;
+const double PI = 3.141593; // 원주율
 
 // 2차원 좌표 구조체(자료형) 만들기
 // cordinate2d 2차원 좌표를 의미하는 C2dType 구조체
@@ -37,12 +39,12 @@ bool chkOverlap(CircleType c1, CircleType c2) {
 
 void dispCircle(CircleType c) {
     cout << " 중심 : (" << c.center.x << ", " << c.center.y << ")";
-    cout << " 반경 : " << c.radius << endl;
+    cout << " 반지름 : " << c.radius << endl;
 }
 
 int main() {
-    CircleType c1 = {{0, 0}, 10}; // 중심 (0, 0) 반경 10 으로 초기화
-    CircleType c2 = {{30, 10}, 5}; // 중심 (30, 10) 반경 5 로 초기화
+    CircleType c1 = {{0, 0}, 10}; // 중심 (0, 0) 반지름 10 으로 초기화
+    CircleType c2 = {{30, 10}, 5}; // 중심 (30, 10) 반지름 5 로 초기화
 
     cout << "원 1" << endl;
     dispCircle(c1);
