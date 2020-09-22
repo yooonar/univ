@@ -116,4 +116,4 @@ Temporary Items
 .history
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,c,c++,macos
-cpp/.vscode/tasks.json
+# cpp/.vscode/tasks.json
