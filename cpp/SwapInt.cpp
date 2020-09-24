@@ -1,6 +1,5 @@
 #include <iostream>
 using namespace std;
-
 void SwapValues(int &x, int &y); // 함수의 원형
 int main() {
     int a, b;
@@ -20,4 +19,4 @@ void SwapValues(int &x, int &y) {
     int temp = x;
     x = y;
     y = temp;
-}9
+}
