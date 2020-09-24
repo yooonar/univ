@@ -86,6 +86,9 @@ using namespace std;
 - 인수의 기본 값을 지정하는 방법
   - 일반적으로 사용되는 기본 값이 있는 인수의 경우 함수를 정의할 때 그 값을 미리 지정할 수 있다.
     Eg. istream& get(char* pch, int max, char delim='\n');
+  - 디폴트 인수는 인수 중 끝에만 위치할 수 있다.
+    Eg. void f(int x, int y = 10, int z = 20); // OK
+    Eg. void g(int x, int y = 10, int z); // ERROR!
 */
 int main() {
 
