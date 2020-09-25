@@ -16,10 +16,12 @@ struct C2dType {
 
 // 원 클래스
 class CircleClass {
+    // private 가시성
     C2dType center; // 중심 좌표
     double radius; // 반지름
-    public:
 
+    // public 가시성
+    public:
     // 중심 (cx, cy) 반지름 r 로 원을 초기화
     void init(double cx, double cy, double r) {
         center.x = cx;
