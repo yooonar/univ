@@ -19,9 +19,12 @@ using namespace std;
 */
 int main() {
 
+    // 아래 두 줄은 int *intPtr = new int; 한줄로 작성 가능하다.
     // 단일 데이터 공간의 할당 및 반환
     int *intPtr;
     intPtr = new int;
+
+
     *intPtr = 10; // intPtr 에 10을 넣는다.
     // ...
     delete intPtr; // 시스템에 동적 메모리를 반납한다.
@@ -44,5 +47,10 @@ int main() {
     // ...
     delete [] intPtrArray; // 동적 메모리를 반납한다.
     intPtrArray = nullptr; // intPtrArray 초기화. intPtrArray 는 아무것도 가리키고 있지 않다.
+
+    // null pointer 인지 확인하는 조건문
+    if(intPtrArray == nullptr) {
+
+    }
     return 0;
 }
