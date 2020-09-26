@@ -17,10 +17,8 @@ int main()
 
     cout << "a 의 값 : " << a << endl;
     cout << "aRef 가 참조하는 값 : " << aRef << endl << endl;
-
     aRef = 100;
     cout << "a 의 값 : " << a << endl;
-
     aRef = b;
     cout << "a 의 값 : " << a << endl;
     return 0;
