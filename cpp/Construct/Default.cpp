@@ -41,5 +41,9 @@ int main() {
     cnt.reset();
     cnt.count();
     cout << cnt.getValue() << endl;
+
+    Counter cntArr[4]; // 디폴트 생성자가 묵시적으로 만들어졌기 때문에 Counter 객체를 만들 수 있고, Counter 객체의 배열을 만들 수가 있다.
+    // 동적 메모리 할당을 이용해 배열을 할당하는 것도 가능하다.
+    Counter *pt = new Counter[10]; // Counter 클래스의 포인터 pt 를 만들고, new Counter[10] 을 하면 Counter 객체를 10개 만드는 것이다. 이것을 pt 라는 포인터가 가리키게 해준다.
     return 0;
 }
