@@ -20,5 +20,12 @@ class Person {
 
         // 주소 변경
         void chAddr(const char *newAddr);
+
+        Person(const Person& p);
+        Person(Person&& p);
+
+        Person& operator = (const Person& p);
+        Person& operator = (Person&& p);
+
 };
 #endif

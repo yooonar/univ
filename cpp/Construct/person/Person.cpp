@@ -39,3 +39,39 @@ void Person::chAddr(const char* newAddr) {
     // 데이터 멤버 addr 에 새로운 주소를 복사
     strcpy(addr, newAddr);
 }
+
+Person::Person(const Person &p) { // 복사생성자
+	name = p.name;
+	addr = p.addr;
+}
+
+Person::Person(Person &&p) { // 이동생성자
+	name = p.name;
+	addr = p.addr;
+}
+
+Person& Person::operator=(const Person& p) { // 대입연산자
+	name = p.name;
+	addr = p.addr;
+
+	return *this;
+}
+
+Person& Person::operator=(Person&& p) { // 이동 대입 연산자
+	if (this != &p) {
+		delete[] name;
+        delete[] addr;
+		name = p.name;
+		addr = p.addr;
+
+		p.name = nullptr;
+		p.addr = nullptr;
+	}
+
+	return *this;
+}
+
+int main(){
+    Person p1("이름", "주소");
+    p1.print();
+}
